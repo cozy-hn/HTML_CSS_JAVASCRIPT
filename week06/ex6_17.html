@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title></title>
+		<title>for문</title>
 	</head>
 	<body>
-		<h3></h3>
+		<h3>for 문으로 10px~35px크기 출력</h3>
 		<hr>
+		<script>
+			var size=10;
+			for(size;size<=35;size+=5){
+				document.write("<span "+"style='font-size:"+size+"px;'>");
+				document.write(size+"px");
+				document.write("</span>")
+			}
+		</script>
 	</body>
 </html>
