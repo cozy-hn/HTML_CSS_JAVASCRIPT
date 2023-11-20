@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            계산기 만들기
+        </title>
+        <style>
+            .wide_button {
+                width: 4em;
+                margin-left: 15px;
+                margin-bottom: 5px;
+            }
+            #exp {
+                margin: 3px;
+                width: 22em;
+            }
+        </style>
+        <script>
+            var text = "";
+            function add_text(txt)
+            {
+                var screen = document.getElementById("exp");
+                text+=txt;
+                screen.value=text;
+            }
+            function text_reset()
+            {
+                var screen = document.getElementById("exp");
+                text="";
+                screen.value="0";
+            }
+            function calculate() 
+            {
+                var screen = document.getElementById("exp");
+                screen.value = eval(text);
+                text=screen.value;
+            }
+            function erase()
+            {
+                var screen = document.getElementById("exp");
+                text=text.slice(0,-1);
+                screen.value=text;
+                if (screen.value=="")
+                {
+                    text="";
+                    screen.value="0";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h3>계산기 만들기</h3>
+        <hr>
+        <input type="text" id="exp" value="0" readonly>
+        <br>
+        <button onclick="erase()" class="wide_button">BACK</button>
+        <button onclick="text_reset()" class="wide_button">CE</button>
+        <button onclick="text_reset()" class="wide_button">C</button>
+        <button onclick="calculate()" class="wide_button">=</button>
+        <br>
+        <button onclick="add_text('7')" class="wide_button">7</button>
+        <button onclick="add_text('8')" class="wide_button">8</button>
+        <button onclick="add_text('9')" class="wide_button">9</button>
+        <button onclick="add_text('/')" class="wide_button">/</button>
+        <br>
+        <button onclick="add_text('4')" class="wide_button">4</button>
+        <button onclick="add_text('5')" class="wide_button">5</button>
+        <button onclick="add_text('6')" class="wide_button">6</button>
+        <button onclick="add_text('*')" class="wide_button">*</button>
+        <br>
+        <button onclick="add_text('1')" class="wide_button">1</button>
+        <button onclick="add_text('2')" class="wide_button">2</button>
+        <button onclick="add_text('3')" class="wide_button">3</button>
+        <button onclick="add_text('-')" class="wide_button">-</button>
+        <br>
+        <button onclick="add_text('0')" class="wide_button">0</button>
+        <button onclick="add_text('+')" class="wide_button">+</button>
+        <button onclick="" class="wide_button">NONE</button>
+        <button onclick="" class="wide_button">NONE</button>
+        <br>
+
+    </body>
+</html>
