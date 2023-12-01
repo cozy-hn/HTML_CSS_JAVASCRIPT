@@ -1,51 +1,38 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>
-            계산기 만들기
-        </title>
+        <title>계산기 만들기</title>
         <style>
             .wide_button {
                 width: 4em;
                 margin-left: 15px;
-                margin-bottom: 5px;
-            }
+                margin-bottom: 5px;}
             #exp {
                 margin: 3px;
-                width: 22em;
-            }
+                width: 22em;}
         </style>
         <script>
             var text = "";
-            function add_text(txt)
-            {
+            function add_text(txt){
                 var screen = document.getElementById("exp");
                 text+=txt;
-                screen.value=text;
-            }
-            function text_reset()
-            {
+                screen.value=text;}
+            function text_reset(){
                 var screen = document.getElementById("exp");
                 text="";
-                screen.value="0";
-            }
-            function calculate() 
-            {
+                screen.value="0";}
+            function calculate() {
                 var screen = document.getElementById("exp");
                 screen.value = eval(text);
-                text=screen.value;
-            }
-            function erase()
-            {
+                text=screen.value;}
+            function erase(){
                 var screen = document.getElementById("exp");
                 text=text.slice(0,-1);
                 screen.value=text;
-                if (screen.value=="")
-                {
+                if (screen.value==""){
                     text="";
-                    screen.value="0";
+                    screen.value="0";}
                 }
-            }
         </script>
     </head>
     <body>

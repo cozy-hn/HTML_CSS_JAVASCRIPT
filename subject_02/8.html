@@ -3,10 +3,8 @@
     <head>
         <title>계산기 만들기</title>
         <script>
-            function calculate(event) 
-            {
-                if (event.keyCode == 13)
-                {
+            function calculate(event) {
+                if (event.keyCode == 13){
                     var exp= document.getElementById("exp");
                     var result = document.getElementById("result");
                     result.value= eval(exp.value);
@@ -18,8 +16,7 @@
         <h3> 계산기 만들기</h3>
         <hr>
         수식을 입력하고 &lt;Enter&gt;를 입력하세요.
-        <br>
-        <br>
+        <br><br>
         <form>
             식 <input type="text" id="exp" value="" onkeydown="calculate(event)">
             <br>
