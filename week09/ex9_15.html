@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>new Imgage()로 이미지 로딩</title>
+        <script>
+            var files = ["../subject_02/apple.jpg",
+            "../subject_02/banana.jpg",
+            "../subject_02/mango.jpg"];
+            var imgs = new Array();
+            for(var i=0; i<files.length;i++){
+                imgs[i]=new Image();
+                imgs[i].src=files[i];
+            }
+
+            var next = 1;
+            function change(img) {
+                img.src = imgs[next].src;
+                next++;
+                next %= imgs.length;
+            }
+        </script>
+    </head>
+    <h3>new Image()로 이미지 로딩</h3>
+    <hr>
+    이미지를 클릭하면 다음 이미지를 보여줍니다.
+    <p>
+        <img src="../subject_02/apple.jpg" style="border: 20px ridge wheat;" width="200px" height="200px" onclick="change(this)">
+    </p>
+</html>
